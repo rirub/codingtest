@@ -1,19 +1,30 @@
-s, e = map(int,input().split())
+dx = [-1,0,1,0]
+dy = [0,1,0,-1]
 
-tmp = e-s
-
-cnt =0
-if tmp>0:
-    cnt += tmp//5
-    tmp %= 5
-
-    if tmp <=3:
-        cnt += tmp
-    elif tmp == 4:
-        cnt += 2
-    else:
+def DFS(x,y):
+    global cnt
+    if x==6 and y==6:
         cnt += 1
+        return
+    else:
+        for i in range(4):
+            x1 = x + dx[i]
+            y1 = y + dy[i]
+            if 0 <= x1 <= 6 and 0<=y1<=6 and a[x][y] == 0:
+                a[x1][y1] = 1
+                DFS(x1,y1)
+                a[x1][y1] = 0
 
-else:
-    cnt = -tmp
-print(cnt)
+
+
+
+
+
+
+
+if __name__=="__main__":
+    a = [ list(map(int,input().split())) for _ in range(7)]
+    cnt = 0
+    a[0][0]=1
+    DFS(0,0)
+    print(cnt)

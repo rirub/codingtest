@@ -1,12 +1,10 @@
-
-n = int(input())
+n=int(input())
 a = list(map(int,input().split()))
-
+tmp = []
+res = ""
 lt = 0
 rt = n-1
-last = 0
-res = ""
-tmp = []
+last =0
 
 while lt<=rt:
     if a[lt]>last:
@@ -17,13 +15,11 @@ while lt<=rt:
     if len(tmp)==0:
         break
     else:
-        res=res+tmp[0][1]
+        res = res + tmp[0][1]
         last = tmp[0][0]
         if tmp[0][1]=='L':
-            lt += 1
+            lt+=1
         else:
-            rt -= 1
-    tmp = []
-
-print(len(res))
+            rt-=1
+    tmp.clear()
 print(res)

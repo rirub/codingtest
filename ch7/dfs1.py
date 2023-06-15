@@ -14,7 +14,7 @@ def dfs(s,t):
 if __name__=="__main__":
     n,m = map(int,input().split())
     a = []
-    res = []
+    res = []o
     for _ in range(n):
         x, y = map(int,input().split())
         a.append((x,y))

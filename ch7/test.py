@@ -1,3 +1,5 @@
-a = list(range(1,3))
-a.remove(2)
-print(a)
+n = int(input())
+a = [list(map(int,input().split())) for _ in range(n)]
+
+print(min(a))
+print(max(a))
